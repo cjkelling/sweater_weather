@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Get forecast data' do
   describe 'Use the city and state from the GET request to retrieve the lat and long for the city' do
     describe 'Retrieve forecast data from the Darksky API using the lat and long' do
-      it 'renders JSON data for the forecast in the city' do
+      it 'Renders JSON data for the forecast in the city' do
         get '/api/v1/forecast?location=denver,co'
 
         expect(response).to be_successful
@@ -30,6 +30,12 @@ describe 'Get forecast data' do
         expect(:daily_percipitation_type).to_not be_empty
         expect(:daily_temperature_low).to_not be_empty
         expect(:daily_temperature_high).to_not be_empty
+      end
+
+      it 'Returns the url to an appropriate background image for a location' do
+        get '/api/v1/backgrounds?location=denver,co'
+
+        expect(response).to be_successful
       end
     end
   end
