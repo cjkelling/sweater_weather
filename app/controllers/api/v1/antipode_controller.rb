@@ -1,5 +1,5 @@
 class Api::V1::AntipodeController < ApplicationController
   def index
-    weather_data = Forecast.new(params[:location]).get_weather_forecast_antipode
+    antipode_lat_long = Antipode.new(params[:location]).get_antipode
   end
 end
