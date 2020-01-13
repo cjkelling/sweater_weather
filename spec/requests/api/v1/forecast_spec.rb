@@ -36,6 +36,8 @@ describe 'Get forecast data' do
         get '/api/v1/backgrounds?location=denver,co'
 
         expect(response).to be_successful
+
+        expect(response.body).to eq('https://live.staticflickr.com/65535/49355342943_4f9ba7601c_o.jpg')
       end
     end
   end
