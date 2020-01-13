@@ -5,7 +5,7 @@ class Forecast
   end
 
   def get_weather_forecast
-    lat_long = Geocoding.new(@location).latitude_longitude
+    lat_long = Geocoding.new(@location, 0).latitude_longitude
     Weather.new(lat_long, 0).current_weather
   end
 
