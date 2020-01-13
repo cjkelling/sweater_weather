@@ -8,8 +8,9 @@ describe 'Find Antipode' do
       expect(response).to be_successful
 
       expect(:location_name).to_not be_empty
-      expect(:forecast).to_not be_empty
-      expect(:search_location).to eq('Hong Kong')
+      expect(:current_summary).to_not be_empty
+      expect(:current_temperature).to_not be_empty
+      expect(:search_location).to_not be_empty
     end
   end
 end
