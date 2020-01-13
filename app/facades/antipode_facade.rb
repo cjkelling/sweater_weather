@@ -5,10 +5,10 @@ class AntipodeFacade
               :current_temperature,
               :search_location
 
-  def initialize(data, location)
+  def initialize(data, location, antipode_city)
     i = 0
     @id = i + 1
-    @location_name = 0
+    @location_name = antipode_city
     @current_summary = data[:currently][:summary]
     @current_temperature = data[:currently][:temperature]
     @search_location = location
