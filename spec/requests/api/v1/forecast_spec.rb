@@ -37,7 +37,7 @@ describe 'Get forecast data' do
 
         expect(response).to be_successful
 
-        expect(response.body).to eq('https://live.staticflickr.com/65535/49355342943_4f9ba7601c_o.jpg')
+        expect(response.body).to include('https://live.staticflickr.com')
       end
     end
   end
