@@ -13,9 +13,13 @@ gem 'rails', '~> 5.2.4'
 gem 'rspec-rails'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capybara'
   gem 'pry'
+  gem 'shoulda-matchers'
+  gem 'simplecov'
 end
 
 group :development do
