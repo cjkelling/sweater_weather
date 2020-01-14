@@ -7,10 +7,9 @@ class GoogleMapsService
   end
 
   def directions(start, finish)
-    response = conn.get("https://maps.googleapis.com/maps/api/directions/json", {
-      origin: start,
-      destination: finish
-    })
+    response = conn.get('https://maps.googleapis.com/maps/api/directions/json',
+                        origin: start,
+                        destination: finish)
     JSON.parse(response.body, symbolize_names: true)
   end
 end
