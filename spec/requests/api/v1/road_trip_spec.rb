@@ -17,5 +17,15 @@ describe 'Road Trip' do
       expect(:travel_time).to_not be_empty
       expect(:arrival_forecast).to_not be_empty
     end
+
+    it 'If no API key or an incorrect key is provided return 401 (Unauthorized)' do
+      post '/api/v1/users?email=whatever@example.com;password=password;password_confirmation=password'
+      post '/api/v1/sessions?email=whatever@example.com;password=password'
+
+      post '/api/v1/road_trip?origin=Denver,CO;destination=Pueblo,CO'
+
+      expect(response.status).to eq(401)
+      expect(response.body).to include('Unauthorized')
+    end
   end
 end
