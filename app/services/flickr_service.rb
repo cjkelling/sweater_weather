@@ -1,11 +1,13 @@
 class FlickrService
-  def get_image_url(location)
+  def get_image_url(lat, lon)
     response = conn.get('services/rest/') do |req|
       req.params['method'] = 'flickr.photos.search'
       req.params['api_key'] = ENV['FLICKR_API_KEY']
       req.params['format'] = 'json'
       req.params['nojsoncallback'] = 1
-      req.params['text'] = location
+      req.params['lat'] = lat
+      req.params['lon'] = lon
+      req.params['geo_context'] = 2
       req.params['extras'] = 'url_o'
     end
     data = JSON.parse(response.body, symbolize_names: true)
