@@ -5,7 +5,6 @@ class RoadTrip
   end
 
   def get_time
-    data = GoogleMapsService.new.directions(@origin, @destination)
-    data[:routes][0][:legs][0][:duration][:text]
+    GoogleMapsService.new.directions(@origin, @destination)[:routes][0][:legs][0][:duration][:text]
   end
 end
